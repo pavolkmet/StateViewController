@@ -27,6 +27,12 @@
 
 @interface NSLayoutConstraint (StateViewController)
 
+/**
+ Sets the priority and active state of the constraint.
+
+ @param priority The priority of the constraint.
+ @param active The active state of the constraint.
+ */
 - (void)setPriority:(UILayoutPriority)priority isActive:(BOOL)active;
 
 @end
