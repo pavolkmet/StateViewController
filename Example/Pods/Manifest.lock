@@ -1,0 +1,36 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - JSONModel (1.7.0)
+  - StateViewController (0.1.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - JSONModel
+  - StateViewController (from `../StateViewController.podspec`)
+
+EXTERNAL SOURCES:
+  StateViewController:
+    :path: "../StateViewController.podspec"
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  StateViewController: fe0c58d7f5e58adf90c57a8f17ebaca2ce82131b
+
+PODFILE CHECKSUM: 2a850bfc9ac7cc00e3933fd4e8490ba98ef4d34c
+
+COCOAPODS: 1.2.1

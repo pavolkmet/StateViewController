@@ -1,0 +1,6 @@
+framework module StateViewController {
+  umbrella header "StateViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
