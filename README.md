@@ -6,6 +6,10 @@
 
 A view controller category which presents UIViews for loading, error and empty states.
 
+<p align="center"> 
+<img src=Resources/StateViewController-Gif.gif>
+</p>
+
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Overview](#overview)
