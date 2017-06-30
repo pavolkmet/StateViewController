@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name              = 'StateViewController'
-  s.version           = '0.1.0'
-  s.summary           = 'Small extension which handle loading, empty and error states of view controller.'
+  s.version           = '0.2.0'
+  s.summary           = 'Small category which handle loading, empty and error states of view controller.'
 
   s.description       = <<-DESC
-  A view controller extension which presents `UIView` for loading, error and empty states.
+  A view controller category which presents `UIView` for loading, error and empty states.
                    DESC
   s.homepage          = 'https://github.com/GoodRequest/StateViewController'
   s.license           = { :type => 'MIT', :file => 'LICENSE' }
