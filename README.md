@@ -10,6 +10,7 @@ A view controller category which presents UIViews for loading, error and empty s
 - [Installation](#installation)
 - [Overview](#overview)
 - [Usage](#usage)
+- [Life cycle](#life-cycle)
 - [Author](#author)
 - [License](#license)
 
