@@ -79,7 +79,6 @@ Then, configure the `loadingView`, `emptyView` and `errorView` properties in `vi
     self.errorView = // Custom error view type of UIView
     self.emptyView = // Custom empty view type of UIView
 }
-@end
 ```
 
 After that in `viewWillAppear:` method you must call `setupInitialState` method which setup as method name says initial state of view controller.
@@ -117,7 +116,6 @@ After that, simply tell the view controller whenever content is loading and `Sta
     }];
     [task resume];
 }
-@end
 ```
 
 ## Life cycle
