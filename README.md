@@ -55,14 +55,16 @@ State View Controller allows you to easily manager four most common states:
 First make sure that you have imported category.
 
 #### Cocoapods
+
 ```objective-c
 #import <StateViewController/UIViewController+StateViewController.h>
 ```
+
 #### Manually
+
 ```objective-c
 #import "UIViewController+StateViewController.h"
 ```
-
 
 Then make sure that your `UIViewController` or `UITableViewController` or `UICollectionViewController` adopts protocol `StateViewController`.
 
