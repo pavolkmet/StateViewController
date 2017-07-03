@@ -1,9 +1,9 @@
 //
 //  ErrorView.m
-//  StateableViewController
+//  Example
 //
 //  Created by Pavol Kmet on 28/06/2017.
-//  Copyright © 2017 Pavol Kmet. All rights reserved.
+//  Copyright © 2017 GoodRequest. All rights reserved.
 //
 
 #import "ErrorView.h"

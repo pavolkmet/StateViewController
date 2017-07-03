@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC601B911F053C0F001C868B /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC601B8E1F053C0E001C868B /* EmptyView.xib */; };
-		BC601B921F053C0F001C868B /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC601B8F1F053C0E001C868B /* EmptyView.m */; };
-		BC601B961F053C16001C868B /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC601B941F053C16001C868B /* ErrorView.m */; };
-		BC601B971F053C16001C868B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC601B951F053C16001C868B /* ErrorView.xib */; };
-		BC601B9B1F053C1C001C868B /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC601B981F053C1C001C868B /* LoadingView.xib */; };
-		BC601B9C1F053C1C001C868B /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC601B9A1F053C1C001C868B /* LoadingView.m */; };
 		BC601BA01F053FED001C868B /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC601B9F1F053FED001C868B /* ImageTableViewCell.m */; };
+		BC6EDADD1F0A3143008FDB2F /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6EDADB1F0A3143008FDB2F /* EmptyView.m */; };
+		BC6EDADE1F0A3143008FDB2F /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EDADC1F0A3143008FDB2F /* EmptyView.xib */; };
+		BC6EDAE21F0A3149008FDB2F /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6EDAE01F0A3149008FDB2F /* ErrorView.m */; };
+		BC6EDAE31F0A3149008FDB2F /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EDAE11F0A3149008FDB2F /* ErrorView.xib */; };
+		BC6EDAE71F0A314F008FDB2F /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6EDAE51F0A314F008FDB2F /* LoadingView.m */; };
+		BC6EDAE81F0A314F008FDB2F /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EDAE61F0A314F008FDB2F /* LoadingView.xib */; };
 		BC8573971F0534E400AADDBC /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8573961F0534E400AADDBC /* RequestManager.m */; };
 		BC85739A1F05368700AADDBC /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8573991F05368700AADDBC /* Page.m */; };
 		BC85739D1F05368E00AADDBC /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = BC85739C1F05368E00AADDBC /* Image.m */; };
@@ -29,17 +29,17 @@
 		51C3ED294C0A0E0D22473FB9 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954BABEA9FA92A0E3F34D852 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5172A31F052EBC00FB4D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC601B8E1F053C0E001C868B /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyView.xib; path = ../../../../../../Desktop/das/Example/View/Views/Empty/EmptyView.xib; sourceTree = "<group>"; };
-		BC601B8F1F053C0E001C868B /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptyView.m; path = ../../../../../../Desktop/das/Example/View/Views/Empty/EmptyView.m; sourceTree = "<group>"; };
-		BC601B901F053C0F001C868B /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptyView.h; path = ../../../../../../Desktop/das/Example/View/Views/Empty/EmptyView.h; sourceTree = "<group>"; };
-		BC601B931F053C16001C868B /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorView.h; path = ../../../../../../Desktop/das/Example/View/Views/Error/ErrorView.h; sourceTree = "<group>"; };
-		BC601B941F053C16001C868B /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorView.m; path = ../../../../../../Desktop/das/Example/View/Views/Error/ErrorView.m; sourceTree = "<group>"; };
-		BC601B951F053C16001C868B /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ErrorView.xib; path = ../../../../../../Desktop/das/Example/View/Views/Error/ErrorView.xib; sourceTree = "<group>"; };
-		BC601B981F053C1C001C868B /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingView.xib; path = ../../../../../../Desktop/das/Example/View/Views/Loading/LoadingView.xib; sourceTree = "<group>"; };
-		BC601B991F053C1C001C868B /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = ../../../../../../Desktop/das/Example/View/Views/Loading/LoadingView.h; sourceTree = "<group>"; };
-		BC601B9A1F053C1C001C868B /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = ../../../../../../Desktop/das/Example/View/Views/Loading/LoadingView.m; sourceTree = "<group>"; };
 		BC601B9E1F053FED001C868B /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		BC601B9F1F053FED001C868B /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		BC6EDADA1F0A3143008FDB2F /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		BC6EDADB1F0A3143008FDB2F /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		BC6EDADC1F0A3143008FDB2F /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		BC6EDADF1F0A3149008FDB2F /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
+		BC6EDAE01F0A3149008FDB2F /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorView.m; sourceTree = "<group>"; };
+		BC6EDAE11F0A3149008FDB2F /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		BC6EDAE41F0A314F008FDB2F /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		BC6EDAE51F0A314F008FDB2F /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		BC6EDAE61F0A314F008FDB2F /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		BC8573951F0534E400AADDBC /* RequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		BC8573961F0534E400AADDBC /* RequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		BC8573981F05368700AADDBC /* Page.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page.h; sourceTree = "<group>"; };
@@ -115,9 +115,9 @@
 		BC601B8B1F053BEF001C868B /* Empty */ = {
 			isa = PBXGroup;
 			children = (
-				BC601B901F053C0F001C868B /* EmptyView.h */,
-				BC601B8F1F053C0E001C868B /* EmptyView.m */,
-				BC601B8E1F053C0E001C868B /* EmptyView.xib */,
+				BC6EDADA1F0A3143008FDB2F /* EmptyView.h */,
+				BC6EDADB1F0A3143008FDB2F /* EmptyView.m */,
+				BC6EDADC1F0A3143008FDB2F /* EmptyView.xib */,
 			);
 			path = Empty;
 			sourceTree = "<group>";
@@ -125,9 +125,9 @@
 		BC601B8C1F053BF3001C868B /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				BC601B931F053C16001C868B /* ErrorView.h */,
-				BC601B941F053C16001C868B /* ErrorView.m */,
-				BC601B951F053C16001C868B /* ErrorView.xib */,
+				BC6EDADF1F0A3149008FDB2F /* ErrorView.h */,
+				BC6EDAE01F0A3149008FDB2F /* ErrorView.m */,
+				BC6EDAE11F0A3149008FDB2F /* ErrorView.xib */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 		BC601B8D1F053BF7001C868B /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				BC601B991F053C1C001C868B /* LoadingView.h */,
-				BC601B9A1F053C1C001C868B /* LoadingView.m */,
-				BC601B981F053C1C001C868B /* LoadingView.xib */,
+				BC6EDAE41F0A314F008FDB2F /* LoadingView.h */,
+				BC6EDAE51F0A314F008FDB2F /* LoadingView.m */,
+				BC6EDAE61F0A314F008FDB2F /* LoadingView.xib */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -260,6 +260,7 @@
 				TargetAttributes = {
 					BCFC9A2B1F052D4B00128AB8 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3MYT859P4D;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -288,10 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCFC9A3C1F052D4B00128AB8 /* Assets.xcassets in Resources */,
-				BC601B911F053C0F001C868B /* EmptyView.xib in Resources */,
+				BC6EDADE1F0A3143008FDB2F /* EmptyView.xib in Resources */,
 				BCFC9A3A1F052D4B00128AB8 /* Main.storyboard in Resources */,
-				BC601B971F053C16001C868B /* ErrorView.xib in Resources */,
-				BC601B9B1F053C1C001C868B /* LoadingView.xib in Resources */,
+				BC6EDAE31F0A3149008FDB2F /* ErrorView.xib in Resources */,
+				BC6EDAE81F0A314F008FDB2F /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,15 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC601B921F053C0F001C868B /* EmptyView.m in Sources */,
+				BC6EDADD1F0A3143008FDB2F /* EmptyView.m in Sources */,
+				BC6EDAE71F0A314F008FDB2F /* LoadingView.m in Sources */,
 				BC85739A1F05368700AADDBC /* Page.m in Sources */,
 				BCFC9A371F052D4B00128AB8 /* ViewController.m in Sources */,
-				BC601B961F053C16001C868B /* ErrorView.m in Sources */,
 				BCFC9A341F052D4B00128AB8 /* AppDelegate.m in Sources */,
+				BC6EDAE21F0A3149008FDB2F /* ErrorView.m in Sources */,
 				BC85739D1F05368E00AADDBC /* Image.m in Sources */,
 				BCFC9A311F052D4B00128AB8 /* main.m in Sources */,
 				BC601BA01F053FED001C868B /* ImageTableViewCell.m in Sources */,
-				BC601B9C1F053C1C001C868B /* LoadingView.m in Sources */,
 				BC8573971F0534E400AADDBC /* RequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,9 +483,9 @@
 			baseConfigurationReference = 954BABEA9FA92A0E3F34D852 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3MYT859P4D;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodrequest.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,9 +497,9 @@
 			baseConfigurationReference = C0EEC9AB53ADDF41A06DBBAA /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3MYT859P4D;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodrequest.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";

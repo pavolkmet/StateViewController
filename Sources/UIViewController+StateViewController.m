@@ -203,15 +203,29 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
         
         // NECCESSARY FOR TABLE VIEW CONTROLLER AND COLLECTION VIEW CONTROLLER
         
-        [[stateView.heightAnchor constraintEqualToAnchor:self.containerView.heightAnchor] setPriority:UILayoutPriorityDefaultLow isActive:YES];
-        [[stateView.widthAnchor constraintEqualToAnchor:self.containerView.widthAnchor] setPriority:UILayoutPriorityDefaultLow isActive:YES];
-        [[stateView.centerXAnchor constraintEqualToAnchor:self.containerView.centerXAnchor] setPriority:UILayoutPriorityDefaultLow isActive:YES];
-        [[stateView.centerYAnchor constraintEqualToAnchor:self.containerView.centerYAnchor] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeHeight multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
         
-        [[stateView.topAnchor constraintEqualToAnchor:self.containerView.topAnchor constant:insets.top] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
-        [[stateView.bottomAnchor constraintEqualToAnchor:self.containerView.bottomAnchor constant:insets.bottom] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
-        [[stateView.leadingAnchor constraintEqualToAnchor:self.containerView.leadingAnchor constant:insets.left] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
-        [[stateView.trailingAnchor constraintEqualToAnchor:self.containerView.trailingAnchor constant:insets.right] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeWidth multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+        
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeCenterX multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+        
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeCenterY multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+        
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+        
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeBottom multiplier:1 constant:insets.bottom] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+        
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeLeading multiplier:1 constant:insets.left] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+        
+        [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.containerView
+                                      attribute:NSLayoutAttributeTrailing multiplier:1 constant:insets.right] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
         
         [self setStateView:stateView hidden:NO animated:animated completion:completion];
     }
