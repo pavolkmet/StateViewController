@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name              = 'StateViewController'
-  s.version           = '0.2.0'
+  s.version           = '0.3.0'
   s.summary           = 'Small category which handle loading, empty and error states of view controller.'
 
   s.description       = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author            = { 'Pavol Kmet' => 'pavol.kmet@goodrequest.com' }
   s.social_media_url  = 'https://twitter.com/goodrequestcom'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
 
   s.source            = { :git => 'https://github.com/GoodRequest/StateViewController.git', :tag => s.version.to_s }
   s.source_files      = 'Sources/*.{h,m}'
