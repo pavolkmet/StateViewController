@@ -201,33 +201,37 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
         stateView.alpha = animated ? 0 : 1;
         stateView.translatesAutoresizingMaskIntoConstraints = NO;
         
-        [self.containerView addSubview:stateView];
+        if ([self.containerView isKindOfClass:[UITableView class]] || [self.containerView isKindOfClass:[UICollectionView class]]) {
+            [self.containerView insertSubview:stateView atIndex:0];
+        } else {
+            [self.containerView addSubview:stateView];
+        }
         
         // NECCESSARY FOR TABLE VIEW CONTROLLER AND COLLECTION VIEW CONTROLLER
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeHeight multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+                                      attribute:NSLayoutAttributeHeight multiplier:1 constant:0] setPriority:800 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeWidth multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+                                      attribute:NSLayoutAttributeWidth multiplier:1 constant:0] setPriority:800 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeCenterX multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+                                      attribute:NSLayoutAttributeCenterX multiplier:1 constant:0] setPriority:800 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeCenterY multiplier:1 constant:0] setPriority:UILayoutPriorityDefaultLow isActive:YES];
+                                      attribute:NSLayoutAttributeCenterY multiplier:1 constant:0] setPriority:800 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+                                      attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top] setPriority:999 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeBottom multiplier:1 constant:insets.bottom] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+                                      attribute:NSLayoutAttributeBottom multiplier:1 constant:insets.bottom] setPriority:999 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeLeading multiplier:1 constant:insets.left] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+                                      attribute:NSLayoutAttributeLeading multiplier:1 constant:insets.left] setPriority:999 isActive:YES];
         
         [[NSLayoutConstraint constraintWithItem:stateView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.containerView
-                                      attribute:NSLayoutAttributeTrailing multiplier:1 constant:insets.right] setPriority:UILayoutPriorityDefaultHigh isActive:YES];
+                                      attribute:NSLayoutAttributeTrailing multiplier:1 constant:insets.right] setPriority:999 isActive:YES];
         
         [self setStateView:stateView hidden:NO animated:animated completion:completion];
     }
