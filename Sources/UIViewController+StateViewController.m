@@ -177,6 +177,8 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
         [self hideViewForState:self.currentState animated:animated completion:completion];
         [self showViewForState:state animated:animated completion:completion];
         self.currentState = state;
+    } else {
+        [self handleCompletion:completion];
     }
 }
 
