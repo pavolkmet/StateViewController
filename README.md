@@ -20,8 +20,8 @@ A view controller category which presents UIViews for loading, error and empty s
 
 ## Requirements
 
-- iOS 9.0+
-- Xcode 8.0+
+- iOS 8.0+
+- Xcode 7.0+
 - Objective-C
 
 ## Installation
