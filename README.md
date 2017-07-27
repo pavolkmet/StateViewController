@@ -27,7 +27,7 @@ A view controller category which presents UIViews for loading, error and empty s
 
 ## Installation
 
-### Cocoapods
+### CocoaPods
 
 `StateViewController` is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -55,7 +55,7 @@ State View Controller allows you to easily manager four most common states:
 
 First make sure that you have imported category.
 
-#### Cocoapods
+#### CocoaPods
 
 ```objective-c
 #import <StateViewController/UIViewController+StateViewController.h>
