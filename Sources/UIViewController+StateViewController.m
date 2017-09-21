@@ -119,6 +119,16 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     return UIEdgeInsetsZero;
 }
 
+- (UIView *)configureErrorView:(UIView *)view withError:(NSError *)error
+{
+    return view;
+}
+
+- (UIView *)configureEmptyView:(UIView *)view
+{
+    return view;
+}
+
 - (void)handleErrorWhenContentsAvailable:(NSError *)error
 {
     
@@ -136,7 +146,6 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     if (self.currentState == StateViewControllerStateLoading) {
         [self startLoadingAnimated:NO completion:completion];
     } else if (self.currentState == StateViewControllerStateError) {
-        [self endLoadingAnimated:NO error:[NSError errorWithDomain:@"com.goodrequest.StateViewController" code:-1 userInfo:nil] completion:completion];
         [self endLoadingAnimated:NO error:[NSError errorWithDomain:@"com.goodrequest.stateViewController" code:-1 userInfo:nil] completion:completion];
     } else {
         [self endLoadingAnimated:NO completion:completion];
@@ -145,8 +154,10 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
 
 - (void)startLoadingAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
-    if (![self hasContent]) {
-        [self transitionToState:StateViewControllerStateLoading animated:animated completion:completion];
+    if ([self hasContent]) {
+        [self handleCompletion:completion];
+    } else {
+        [self transitionToState:StateViewControllerStateLoading error:nil animated:animated completion:completion];
     }
 }
 
@@ -160,28 +171,24 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     if (error) {
         if ([self hasContent]) {
             [self handleErrorWhenContentsAvailable:error];
+            [self handleCompletion:completion];
         } else {
-            [self transitionToState:StateViewControllerStateError animated:animated completion:completion];
+            [self transitionToState:StateViewControllerStateError error:error animated:animated completion:completion];
         }
     } else {
         if ([self hasContent]) {
-            [self transitionToState:StateViewControllerStateContent animated:animated completion:completion];
+            [self transitionToState:StateViewControllerStateContent error:nil animated:animated completion:completion];
         } else {
-            [self transitionToState:StateViewControllerStateEmpty animated:animated completion:completion];
+            [self transitionToState:StateViewControllerStateEmpty error:nil animated:animated completion:completion];
         }
     }
 }
 
-- (void)transitionToState:(StateViewControllerState)state animated:(BOOL)animated completion:(void (^)(void))completion
 - (void)transitionToState:(StateViewControllerState)state error:(NSError *)error animated:(BOOL)animated completion:(void (^)(void))completion
 {
     if (self.currentState != state) {
-        [self hideViewForState:self.currentState animated:animated completion:completion];
-        [self showViewForState:state animated:animated completion:completion];
         StateViewControllerState currentState = self.currentState;
         self.currentState = state;
-    } else {
-        [self handleCompletion:completion];
         
         [self hideViewForState:currentState animated:animated completion:completion];
         [self showViewForState:state error:error animated:animated completion:completion];
@@ -244,28 +251,18 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
 
 - (void)setStateView:(UIView *)stateView hidden:(BOOL)hidden animated:(BOOL)animated completion:(void (^)(void))completion
 {
-    NSTimeInterval delay = hidden ? 0.4 : 0.0;
+    NSTimeInterval delay = hidden ? 0.2 : 0.0;
     
-    void (^animations)(void) = ^{
+    [UIView animateWithDuration:animated ? 0.2 : 0.0 delay:animated ? delay : 0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         stateView.alpha = !hidden;
-    };
-    
-    if (animated) {
-        [UIView animateWithDuration:0.2 delay:delay options:UIViewAnimationOptionBeginFromCurrentState animations:animations completion:^(BOOL finished) {
-            if (finished) {
-                if (hidden) {
-                    [stateView removeFromSuperview];
-                }
-                [self handleCompletion:completion];
+    } completion:^(BOOL finished) {
+        if (finished) {
+            if (hidden) {
+                [stateView removeFromSuperview];
             }
-        }];
-    } else {
-        [UIView performWithoutAnimation:animations];
-        if (hidden) {
-            [stateView removeFromSuperview];
+            [self handleCompletion:completion];
         }
-        [self handleCompletion:completion];
-    }
+    }];
 }
 
 - (void)handleCompletion:(void (^)(void))completion
