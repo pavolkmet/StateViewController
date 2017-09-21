@@ -16,6 +16,7 @@ A view controller category which presents UIViews for loading, error and empty s
 - [Usage](#usage)
 - [Life cycle](#life-cycle)
 - [Author](#author)
+- [Inspiration](#inspiration)
 - [License](#license)
 
 ## Requirements
@@ -26,7 +27,7 @@ A view controller category which presents UIViews for loading, error and empty s
 
 ## Installation
 
-### Cocoapods
+### CocoaPods
 
 `StateViewController` is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -54,7 +55,7 @@ State View Controller allows you to easily manager four most common states:
 
 First make sure that you have imported category.
 
-#### Cocoapods
+#### CocoaPods
 
 ```objective-c
 #import <StateViewController/UIViewController+StateViewController.h>
@@ -114,7 +115,6 @@ After that, simply tell the view controller whenever content is loading and `Sta
     [self startLoadingAnimated:YES completion:nil];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://example.com"]];
-    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
         //
@@ -145,7 +145,7 @@ To e.g. show a custom alert or other error message, use `handleErrorWhenContents
 - (void)handleErrorWhenContentsAvailable:(NSError *)error
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
