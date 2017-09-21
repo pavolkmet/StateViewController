@@ -15,6 +15,7 @@ A view controller category which presents UIViews for loading, error and empty s
 - [Overview](#overview)
 - [Usage](#usage)
 - [Life cycle](#life-cycle)
+- [Configuration](#configuration)
 - [Author](#author)
 - [Inspiration](#inspiration)
 - [License](#license)
@@ -151,6 +152,8 @@ To e.g. show a custom alert or other error message, use `handleErrorWhenContents
 }
 ```
 
+## Configuration
+
 If your view (loading, error, empty) should have insets you can implement in you view controller method with name `insetForStateView:` which is called every time before the view is presented.
 
 ```objective-c
@@ -159,6 +162,30 @@ If your view (loading, error, empty) should have insets you can implement in you
     return UIEdgeInsetsZero;
 }
 ```
+
+You can also customize your views (empty view, error view) before each view is added to view hierarchy.
+
+### Empty view
+
+```objective-c
+- (UIView *)configureEmptyView:(UIView *)view
+{
+    return view;
+}
+```
+
+Default implementation does nothing.
+
+### Error view
+
+```objective-c
+- (UIView *)configureErrorView:(UIView *)view withError:(NSError *)error
+{
+    return view;
+}
+```
+
+Default implementation does nothing.
 
 ## Author
 
