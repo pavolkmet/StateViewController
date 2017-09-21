@@ -41,33 +41,6 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
 @dynamic emptyView;
 @dynamic currentState;
 
-#pragma mark - Setter
-
-- (void)setContainerView:(UIView *)containerView
-{
-    objc_setAssociatedObject(self, kContainerViewKey, containerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)setLoadingView:(UIView *)loadingView
-{
-    objc_setAssociatedObject(self, kLoadingViewKey, loadingView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)setErrorView:(UIView *)errorView
-{
-    objc_setAssociatedObject(self, kErrorViewKey, errorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)setEmptyView:(UIView *)emptyView
-{
-    objc_setAssociatedObject(self, kEmptyViewKey, emptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)setCurrentState:(StateViewControllerState)currentState
-{
-    objc_setAssociatedObject(self, kCurrentStateKey, [NSNumber numberWithUnsignedInteger:currentState], OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
 #pragma mark - Getter
 
 - (UIView *)containerView
@@ -100,7 +73,34 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     return (StateViewControllerState)[objc_getAssociatedObject(self, kCurrentStateKey) unsignedIntegerValue];
 }
 
-#pragma mark - Stateable View Controller
+#pragma mark - Setter
+
+- (void)setContainerView:(UIView *)containerView
+{
+    objc_setAssociatedObject(self, kContainerViewKey, containerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setLoadingView:(UIView *)loadingView
+{
+    objc_setAssociatedObject(self, kLoadingViewKey, loadingView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setErrorView:(UIView *)errorView
+{
+    objc_setAssociatedObject(self, kErrorViewKey, errorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setEmptyView:(UIView *)emptyView
+{
+    objc_setAssociatedObject(self, kEmptyViewKey, emptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setCurrentState:(StateViewControllerState)currentState
+{
+    objc_setAssociatedObject(self, kCurrentStateKey, [NSNumber numberWithUnsignedInteger:currentState], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+#pragma mark - State View Controller
 
 - (BOOL)hasContent
 {
