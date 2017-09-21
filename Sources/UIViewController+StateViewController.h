@@ -32,10 +32,10 @@
 @protocol StateViewController <NSObject>
 
 - (BOOL)hasContent;
-- (UIEdgeInsets)insetForStateView:(UIView *)stateView;
-- (UIView *)configureErrorView:(UIView *)view withError:(NSError *)error;
-- (UIView *)configureEmptyView:(UIView *)view;
-- (void)handleErrorWhenContentsAvailable:(NSError *)error;
+- (UIEdgeInsets)insetForStateView:(UIView * _Nullable)stateView;
+- (UIView * _Nullable)configureErrorView:(UIView * _Nullable)view withError:(NSError * _Nonnull)error;
+- (UIView * _Nullable)configureEmptyView:(UIView * _Nullable)view;
+- (void)handleErrorWhenContentsAvailable:(NSError * _Nonnull)error;
 
 @end
 
@@ -54,22 +54,22 @@ typedef enum : NSUInteger {
 /**
  The container view. It's usually a UIViewController's view. All views will be added to this view instance.
  */
-@property (strong, nonatomic) UIView *containerView;
+@property (strong, nonatomic) UIView * _Nullable containerView;
 
 /**
  The loading view is shown when the `startLoading` method gets called and `hasContent` method returns false.
  */
-@property (strong, nonatomic) UIView *loadingView;
+@property (strong, nonatomic) UIView * _Nullable loadingView;
 
 /**
  The error view is shown when loading ends and when the `endLoading` method has an error.
  */
-@property (strong, nonatomic) UIView *errorView;
+@property (strong, nonatomic) UIView * _Nullable errorView;
 
 /**
  The empty view is shown when loading ends and when the `hasContent` method returns false.
  */
-@property (strong, nonatomic) UIView *emptyView;
+@property (strong, nonatomic) UIView * _Nullable emptyView;
 
 /**
  The current state of view controller.
@@ -90,7 +90,7 @@ typedef enum : NSUInteger {
 
  @param completion A block object to be executed when the animation sequence ends.
  */
-- (void)setupInitialStateCompletion:(void (^)(void))completion;
+- (void)setupInitialStateCompletion:(nullable void (^)(void))completion;
 
 #pragma mark - Transitions
 
@@ -100,7 +100,7 @@ typedef enum : NSUInteger {
  @param animated If YES, the loading view is being added to hierarchy using an animation.
  @param completion A block object to be executed when the animation sequence ends.
  */
-- (void)startLoadingAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)startLoadingAnimated:(BOOL)animated completion:(nullable void (^)(void))completion;
 
 /**
  Ends the view controller's loading state. If an error occured, the error view is shown. If the `hasContent` method returns false
@@ -109,7 +109,7 @@ typedef enum : NSUInteger {
  @param animated If YES, the view is being added or removed from view hierarchy using an animation based on view controller state.
  @param completion A block object to be executed when the animation sequence ends.
  */
-- (void)endLoadingAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)endLoadingAnimated:(BOOL)animated completion:(nullable void (^)(void))completion;
 
 /**
  Ends the view controller's loading state. If an error occured, the error view is shown. If the `hasContent` method returns false 
@@ -119,6 +119,6 @@ typedef enum : NSUInteger {
  @param error An error that might have occured while loading.
  @param completion A block object to be executed when the animation sequence ends.
  */
-- (void)endLoadingAnimated:(BOOL)animated error:(NSError *)error completion:(void (^)(void))completion;
+- (void)endLoadingAnimated:(BOOL)animated error:(NSError * _Nullable)error completion:(nullable void (^)(void))completion;
 
 @end

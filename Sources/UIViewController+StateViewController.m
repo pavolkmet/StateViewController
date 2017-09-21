@@ -114,22 +114,22 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     return NO;
 }
 
-- (UIEdgeInsets)insetForStateView:(UIView *)stateView
+- (UIEdgeInsets)insetForStateView:(UIView * _Nullable)stateView
 {
     return UIEdgeInsetsZero;
 }
 
-- (UIView *)configureErrorView:(UIView *)view withError:(NSError *)error
+- (UIView * _Nullable)configureErrorView:(UIView * _Nullable)view withError:(NSError * _Nonnull)error
 {
     return view;
 }
 
-- (UIView *)configureEmptyView:(UIView *)view
+- (UIView * _Nullable)configureEmptyView:(UIView * _Nullable)view
 {
     return view;
 }
 
-- (void)handleErrorWhenContentsAvailable:(NSError *)error
+- (void)handleErrorWhenContentsAvailable:(NSError * _Nonnull)error
 {
     
 }
@@ -141,7 +141,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     [self setupInitialStateCompletion:nil];
 }
 
-- (void)setupInitialStateCompletion:(void (^)(void))completion
+- (void)setupInitialStateCompletion:(nullable void (^)(void))completion
 {
     if (self.currentState == StateViewControllerStateLoading) {
         [self startLoadingAnimated:NO completion:completion];
@@ -152,7 +152,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (void)startLoadingAnimated:(BOOL)animated completion:(void (^)(void))completion
+- (void)startLoadingAnimated:(BOOL)animated completion:(nullable void (^)(void))completion
 {
     if ([self hasContent]) {
         [self handleCompletion:completion];
@@ -161,12 +161,12 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (void)endLoadingAnimated:(BOOL)animated completion:(void (^)(void))completion
+- (void)endLoadingAnimated:(BOOL)animated completion:(nullable void (^)(void))completion
 {
     [self endLoadingAnimated:animated error:nil completion:completion];
 }
 
-- (void)endLoadingAnimated:(BOOL)animated error:(NSError *)error completion:(void (^)(void))completion
+- (void)endLoadingAnimated:(BOOL)animated error:(NSError * _Nullable)error completion:(nullable void (^)(void))completion
 {
     if (error) {
         if ([self hasContent]) {
@@ -184,7 +184,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (void)transitionToState:(StateViewControllerState)state error:(NSError *)error animated:(BOOL)animated completion:(void (^)(void))completion
+- (void)transitionToState:(StateViewControllerState)state error:(NSError * _Nullable)error animated:(BOOL)animated completion:(nullable void (^)(void))completion
 {
     if (self.currentState != state) {
         StateViewControllerState currentState = self.currentState;
@@ -198,7 +198,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
 
 #pragma mark - Helper Methods
 
-- (void)hideViewForState:(StateViewControllerState)state animated:(BOOL)animated completion:(void (^)(void))completion
+- (void)hideViewForState:(StateViewControllerState)state animated:(BOOL)animated completion:(nullable void (^)(void))completion
 {
     UIView *stateView = [self viewForState:state];
     if (stateView) {
@@ -206,7 +206,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (void)showViewForState:(StateViewControllerState)state error:(NSError *)error animated:(BOOL)animated completion:(void (^)(void))completion
+- (void)showViewForState:(StateViewControllerState)state error:(NSError * _Nullable)error animated:(BOOL)animated completion:(nullable void (^)(void))completion
 {
     UIView *stateView = [self viewForState:state];
     
@@ -235,7 +235,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (UIView *)viewForState:(StateViewControllerState)state
+- (UIView * _Nullable)viewForState:(StateViewControllerState)state
 {
     switch (state) {
         case StateViewControllerStateContent:
@@ -249,7 +249,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (void)setStateView:(UIView *)stateView hidden:(BOOL)hidden animated:(BOOL)animated completion:(void (^)(void))completion
+- (void)setStateView:(UIView *)stateView hidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(void))completion
 {
     NSTimeInterval delay = hidden ? 0.2 : 0.0;
     
@@ -265,7 +265,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }];
 }
 
-- (void)handleCompletion:(void (^)(void))completion
+- (void)handleCompletion:(nullable void (^)(void))completion
 {
     if (completion) {
         completion();
