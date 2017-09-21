@@ -28,6 +28,11 @@
 @interface NSLayoutConstraint (StateViewController)
 
 /**
+ Create constraints explicitly.  Constraints are of the form "view1.attribute = view2.attribute * multiplier + constant"
+ */
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attribute equalToItem:(id)view2 constant:(CGFloat)constant;
+
+/**
  Sets the priority and active state of the constraint.
 
  @param priority The priority of the constraint.

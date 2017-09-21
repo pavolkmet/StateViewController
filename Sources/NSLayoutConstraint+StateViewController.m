@@ -27,6 +27,11 @@
 
 @implementation NSLayoutConstraint (StateViewController)
 
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attribute equalToItem:(id)view2 constant:(CGFloat)constant
+{
+    return [NSLayoutConstraint constraintWithItem:view1 attribute:attribute relatedBy:NSLayoutRelationEqual toItem:view2 attribute:attribute multiplier:1 constant:constant];
+}
+
 - (void)setPriority:(UILayoutPriority)priority isActive:(BOOL)active
 {
     self.priority = priority;
