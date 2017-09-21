@@ -26,6 +26,8 @@ A view controller category which presents UIViews for loading, error and empty s
 - Xcode 7.0+
 - Objective-C
 
+It's also compatible with Swift.
+
 ## Installation
 
 ### CocoaPods
