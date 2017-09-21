@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name              = 'StateViewController'
-  s.version           = '0.4.0'
+  s.version           = '0.5.0'
   s.summary           = 'Small category which handle loading, empty and error states of view controller.'
 
   s.description       = <<-DESC
