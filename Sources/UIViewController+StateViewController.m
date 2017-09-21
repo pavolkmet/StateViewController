@@ -137,6 +137,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
         [self startLoadingAnimated:NO completion:completion];
     } else if (self.currentState == StateViewControllerStateError) {
         [self endLoadingAnimated:NO error:[NSError errorWithDomain:@"com.goodrequest.StateViewController" code:-1 userInfo:nil] completion:completion];
+        [self endLoadingAnimated:NO error:[NSError errorWithDomain:@"com.goodrequest.stateViewController" code:-1 userInfo:nil] completion:completion];
     } else {
         [self endLoadingAnimated:NO completion:completion];
     }
@@ -172,14 +173,20 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
 }
 
 - (void)transitionToState:(StateViewControllerState)state animated:(BOOL)animated completion:(void (^)(void))completion
+- (void)transitionToState:(StateViewControllerState)state error:(NSError *)error animated:(BOOL)animated completion:(void (^)(void))completion
 {
     if (self.currentState != state) {
         [self hideViewForState:self.currentState animated:animated completion:completion];
         [self showViewForState:state animated:animated completion:completion];
+        StateViewControllerState currentState = self.currentState;
         self.currentState = state;
     } else {
         [self handleCompletion:completion];
+        
+        [self hideViewForState:currentState animated:animated completion:completion];
+        [self showViewForState:state error:error animated:animated completion:completion];
     }
+    
 }
 
 #pragma mark - Helper Methods
@@ -192,10 +199,18 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     }
 }
 
-- (void)showViewForState:(StateViewControllerState)state animated:(BOOL)animated completion:(void (^)(void))completion
+- (void)showViewForState:(StateViewControllerState)state error:(NSError *)error animated:(BOOL)animated completion:(void (^)(void))completion
 {
     UIView *stateView = [self viewForState:state];
+    
     if (stateView) {
+        
+        if (state == StateViewControllerStateError && error) {
+            stateView = [self configureErrorView:stateView withError:error];
+        } else if (state == StateViewControllerStateEmpty) {
+            stateView = [self configureEmptyView:stateView];
+        }
+        
         UIEdgeInsets insets = [self insetForStateView:stateView];
         
         stateView.alpha = animated ? 0 : 1;

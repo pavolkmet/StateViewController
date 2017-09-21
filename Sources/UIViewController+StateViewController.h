@@ -33,6 +33,8 @@
 
 - (BOOL)hasContent;
 - (UIEdgeInsets)insetForStateView:(UIView *)stateView;
+- (UIView *)configureErrorView:(UIView *)view withError:(NSError *)error;
+- (UIView *)configureEmptyView:(UIView *)view;
 - (void)handleErrorWhenContentsAvailable:(NSError *)error;
 
 @end
