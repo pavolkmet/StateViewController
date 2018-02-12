@@ -280,10 +280,10 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX equalToItem:self.containerView constant:0] setPriority:800 isActive:YES];
     [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterY equalToItem:self.containerView constant:0] setPriority:800 isActive:YES];
     
-    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop equalToItem:self.containerView constant:-insets.top] setPriority:999 isActive:YES];
-    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom equalToItem:self.containerView constant:-insets.bottom] setPriority:999 isActive:YES];
-    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading equalToItem:self.containerView constant:-insets.left] setPriority:999 isActive:YES];
-    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing equalToItem:self.containerView constant:-insets.right] setPriority:999 isActive:YES];
+    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop equalToItem:self.containerView constant:insets.top] setPriority:999 isActive:YES];
+    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom equalToItem:self.containerView constant:insets.bottom] setPriority:999 isActive:YES];
+    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading equalToItem:self.containerView constant:insets.left] setPriority:999 isActive:YES];
+    [[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing equalToItem:self.containerView constant:insets.right] setPriority:999 isActive:YES];
 }
 
 @end
