@@ -193,7 +193,7 @@ Default implementation does nothing.
 
 Pavol Kmet
 
-- Email: [pavol.kmet@goodrequest.com](mailto:pavol.kmet@goodrequest.com)
+- Email: [pavolkmet@icloud.com](mailto:pavolkmet@icloud.com)
 - Twitter: [@PavolKmet](https://twitter.com/PavolKmet)
 
 ## Inspiration
