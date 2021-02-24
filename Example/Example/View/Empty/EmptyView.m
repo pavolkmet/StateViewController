@@ -2,8 +2,8 @@
 //  EmptyView.m
 //  Example
 //
-//  Created by Pavol Kmet on 28/06/2017.
-//  Copyright © 2017 GoodRequest. All rights reserved.
+//  Created by Pavol Kmeť on 28/06/2017.
+//  Copyright © 2017 Pavol Kmeť. All rights reserved.
 //
 
 #import "EmptyView.h"

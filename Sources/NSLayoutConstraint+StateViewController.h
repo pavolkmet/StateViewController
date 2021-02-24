@@ -2,8 +2,8 @@
 // NSLayoutConstraint+StateViewController.h
 // StateViewController
 //
-// Created by Pavol Kmet
-// Copyright (c) 2017 GoodRequest (https://goodrequest.com)
+// Created by Pavol Kmeť
+// Copyright (c) 2021 Pavol Kmeť
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NSLayoutConstraint (StateViewController)
+
+#pragma mark - Helper Methods - Public
 
 /**
  Create constraints explicitly.  Constraints are of the form "view1.attribute = view2.attribute * multiplier + constant"

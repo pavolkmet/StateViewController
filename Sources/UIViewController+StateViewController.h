@@ -2,8 +2,8 @@
 // UIViewController+StateViewController.h
 // StateViewController
 //
-// Created by Pavol Kmet
-// Copyright (c) 2017 GoodRequest (https://goodrequest.com)
+// Created by Pavol Kmeť
+// Copyright (c) 2021 Pavol Kmeť
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -76,7 +76,7 @@ typedef enum : NSUInteger {
  */
 @property (assign, nonatomic) StateViewControllerState currentState;
 
-#pragma mark - Initial state
+#pragma mark - Helper Methods - Public
 
 /**
  Sets up the initial state of the view. This method should be called as soon as possible in view controller's life cycle, 
@@ -91,8 +91,6 @@ typedef enum : NSUInteger {
  @param completion A block object to be executed when the animation sequence ends.
  */
 - (void)setupInitialStateCompletion:(nullable void (^)(void))completion;
-
-#pragma mark - Transitions
 
 /**
  Transitions the view controller to the loading state and shows the loading view if there is no content shown already.

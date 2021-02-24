@@ -2,8 +2,8 @@
 // NSLayoutConstraint+StateViewController.m
 // StateViewController
 //
-// Created by Pavol Kmet
-// Copyright (c) 2017 GoodRequest (https://goodrequest.com)
+// Created by Pavol Kmeť
+// Copyright (c) 2021 Pavol Kmeť
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,8 @@
 #import "NSLayoutConstraint+StateViewController.h"
 
 @implementation NSLayoutConstraint (StateViewController)
+
+#pragma mark - Helper Methods - Public
 
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attribute equalToItem:(id)view2 constant:(CGFloat)constant
 {

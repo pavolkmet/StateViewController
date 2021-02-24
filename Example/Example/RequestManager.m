@@ -2,8 +2,8 @@
 //  RequestManager.m
 //  Example
 //
-//  Created by Pavol Kmet on 29/06/2017.
-//  Copyright © 2017 GoodRequest. All rights reserved.
+//  Created by Pavol Kmeť on 29/06/2017.
+//  Copyright © 2017 Pavol Kmeť. All rights reserved.
 //
 
 #import "RequestManager.h"
@@ -43,7 +43,7 @@ NSString * const kBaseURL = @"https://en.wikipedia.org/api/rest_v1/";
             }
         } else if (showError) {
             if (failure) {
-                failure([NSError errorWithDomain:@"com.goodrequest.TestError" code:-1 userInfo:nil]);
+                failure([NSError errorWithDomain:@"com.Pavol Kmeť.TestError" code:-1 userInfo:nil]);
             }
         } else if (showEmpty) {
             if (success) {

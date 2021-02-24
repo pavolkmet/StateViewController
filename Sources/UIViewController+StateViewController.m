@@ -2,8 +2,8 @@
 // UIViewController+StateViewController.m
 // StateViewController
 //
-// Created by Pavol Kmet
-// Copyright (c) 2017 GoodRequest (https://goodrequest.com)
+// Created by Pavol Kmeť
+// Copyright (c) 2021 Pavol Kmeť
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
 @dynamic emptyView;
 @dynamic currentState;
 
-#pragma mark - Getter
+#pragma mark - Getters
 
 - (UIView *)containerView
 {
@@ -73,7 +73,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     return (StateViewControllerState)[objc_getAssociatedObject(self, kCurrentStateKey) unsignedIntegerValue];
 }
 
-#pragma mark - Setter
+#pragma mark - Setters
 
 - (void)setContainerView:(UIView *)containerView
 {
@@ -100,7 +100,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     objc_setAssociatedObject(self, kCurrentStateKey, [NSNumber numberWithUnsignedInteger:currentState], OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-#pragma mark - State View Controller
+#pragma mark - Helper Methods - Public
 
 - (BOOL)hasContent
 {
@@ -134,8 +134,6 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     
 }
 
-#pragma mark - Public
-
 - (void)setupInitialState
 {
     [self setupInitialStateCompletion:nil];
@@ -146,7 +144,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     if (self.currentState == StateViewControllerStateLoading) {
         [self startLoadingAnimated:NO completion:completion];
     } else if (self.currentState == StateViewControllerStateError) {
-        [self endLoadingAnimated:NO error:[NSError errorWithDomain:@"com.goodrequest.stateViewController" code:-1 userInfo:nil] completion:completion];
+        [self endLoadingAnimated:NO error:[NSError errorWithDomain:@"com.pavolkmet.StateViewController" code:-1 userInfo:nil] completion:completion];
     } else {
         [self endLoadingAnimated:NO completion:completion];
     }
@@ -196,7 +194,7 @@ static char const * const kCurrentStateKey  = "CurrentStateKey";
     
 }
 
-#pragma mark - Helper Methods
+#pragma mark - Helper Methods - Private
 
 - (void)hideViewForState:(StateViewControllerState)state animated:(BOOL)animated completion:(nullable void (^)(void))completion
 {

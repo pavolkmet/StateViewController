@@ -48,7 +48,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## StateViewController
 
-Copyright (c) 2017 Pavol Kmet and GoodRequest contributors (https://goodrequest.com/)
+Copyright (c) 2021 Pavol Kmeť and contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
